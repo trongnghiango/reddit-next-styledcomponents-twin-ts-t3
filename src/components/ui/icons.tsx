@@ -57,21 +57,46 @@ export const IconLogo: React.FC<IProps> = (props) => (
 
 type IColorProps = {
   currentColor?: string | undefined;
+  className?: string;
 };
-export const SearchIcon: React.FC<IColorProps> = ({ currentColor }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    className="w-7 h-7"
-  >
-    <path
-      fillRule="evenodd"
-      d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
+
+export const PlusIcon: React.FC<any> = (props) => {
+  return (
+    <svg
+      className="w-6 h-6"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+      />
+    </svg>
+  );
+};
+export const SearchIcon: React.FC<IColorProps> = (props) => {
+  const {} = props;
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-7 h-7"
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+};
 
 export const ArrowDown: React.FC<IProps> = (props) => (
   <svg

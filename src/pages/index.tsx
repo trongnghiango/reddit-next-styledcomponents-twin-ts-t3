@@ -5,6 +5,7 @@ import {
   ArrowDown,
   HomeIcon,
   IconLogo,
+  PlusIcon,
   SearchIcon,
   TextIcon,
 } from "../components/ui/icons";
@@ -14,6 +15,7 @@ import { Cat } from "../components/ui/cat";
 import { ReactNode } from "react";
 import tw, { styled } from "twin.macro";
 import { StyledComponent } from "styled-components";
+import { IconButton } from "../components/ui/IconButton";
 
 // import {SearchIcon} from "@heroicons/react/solid"
 
@@ -48,8 +50,8 @@ const Home: NextPage = () => (
 
     <main>
       {/* HEADER SECTION */}
-      <header className="flex w-full text-white bg-white">
-        <div className="flex items-center container mx-auto">
+      <header className="flex w-full text-white bg-white shadow">
+        <div className="flex items-center container mx-auto h-[48px] gap-2">
           {/* left section  */}
           <div className="flex items-center flex-1">
             {/* LOGO */}
@@ -63,7 +65,7 @@ const Home: NextPage = () => (
               <OptionButton>
                 <span className="inline">Home</span>
                 <HomeIcon className="h-5 w-5 absolute top-1/2 mt-[-10px] left-[10px]" />
-                <ArrowDown className="absolute w-[16px] h-[16px] mt-[-10px] right-2 top-1/2"/>
+                <ArrowDown className="absolute w-[16px] h-[16px] mt-[-10px] right-2 top-1/2" />
               </OptionButton>
             </Option>
             {/* <div className="flex items-center justify-between min-w-[100px] text-black">
@@ -72,56 +74,260 @@ const Home: NextPage = () => (
                 <ArrowDown className="text-black w-4 h-4" />
               </div>
             </div> */}
-            <form
-              action=""
-              className="bg-gray-800 p-1 px-4 flex rounded-md border border-gray-600 hover:border-gray-300 text-white"
-            >
-              <span className="text-gray-300">
-                <SearchIcon />
-              </span>
-              <input
-                type="text"
-                className="h-8 bg-gray-800 focus:outline-none"
-                placeholder="Search"
-              />
-            </form>
+
+            <div className="relative mx-4 flex-1">
+              <form
+                action=""
+                className={`
+                pl-[40px] 
+                flex 
+                rounded-md 
+                bg-[#DAE0E6] 
+                border
+                border-transparent
+                hover:bg-transparent
+                hover:border-blue-300 
+                
+                text-white
+                relative
+                `}
+              >
+                <span className="text-gray-400 absolute top-1/2 -translate-y-2 left-2 ">
+                  <SearchIcon className={`w-5 h-5`} />
+                </span>
+                <input
+                  type="text"
+                  className="h-8 bg-transparent focus:outline-none"
+                  placeholder="Search"
+                />
+              </form>
+
+              {/* View dialog */}
+              {false && (
+                <div
+                  className={`min-w-full min-h-[40px] bg-blue-200 border rounded absolute top-full mt-2`}
+                >
+                  <p>
+                    jjdkasdka kad ak da da da dad a . da da dakd a da dadad rr
+                    kwke
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* right section */}
-          <div className="flex gap-1">
+          <div className="flex gap-2 divide-x">
             {/* control */}
-            <div className="flex items-center">
-              <img src={logo} alt="logo" className="h-8 w-8" />
-              <img src={logo} alt="logo" className="h-8 w-8" />
-              <img src={logo} alt="logo" className="h-8 w-8" />
+            <div className="flex items-center gap-1 text-black">
+              <IconButton>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a9 9 0 110 18 9 9 0 010-18z"
+                  />
+                </svg>
+              </IconButton>
+              <IconButton>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  />
+                </svg>
+              </IconButton>
+              <IconButton>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </IconButton>
             </div>
 
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-2 pl-2">
               {/* notification */}
-              <div className="flex items-center">
-                <img src={logo} alt="logo" className="h-8 w-8" />
-                <img src={logo} alt="logo" className="h-8 w-8" />
-                <img src={logo} alt="logo" className="h-8 w-8" />
-              </div>
-
-              {/* info User */}
-              <div className="flex items-center w-[150px] gap-2 justify-between">
-                <div className="flex items-center gap-1 text-gray-400">
+              <div className="flex items-center gap-1 text-gray-600">
+                <IconButton>
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 text-black"
                     fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                      strokeWidth={2}
+                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                     />
                   </svg>
-                  <div className="">
+                </IconButton>
+
+                <IconButton>
+                  <svg
+                    className="w-5 h-5 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                    />
+                  </svg>
+                </IconButton>
+                <IconButton>
+                  <PlusIcon className={`w-5 h-5`} />
+                </IconButton>
+
+                <div
+                  className={`
+                  relative    
+                  `}
+                >
+                  <svg
+                    className="absolute w-2 h-2 left-1/3 -top-1"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 12"
+                  >
+                    <path
+                      d="M6.47.828a.5.5 0 00-.94 0L4.268 4.267.827 5.53a.5.5 0 000 .938l3.44 1.264 1.264 3.44a.5.5 0 00.938 0l1.264-3.44 3.44-1.264a.5.5 0 000-.938l-3.44-1.264L6.47.827z"
+                      fill="url(#bluePinkGradient)"
+                      stroke="#fff"
+                      stroke-linejoin="round"
+                    ></path>
+                    <defs>
+                      <linearGradient
+                        id="bluePinkGradient"
+                        x1="1"
+                        y1="11"
+                        x2="11.01"
+                        y2="10.99"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#6A5CFF"></stop>
+                        <stop offset="1" stop-color="#E4ABFF"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+
+                  <svg
+                    className="absolute h-3 w-3 bottom-1/2 -right-1"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 12"
+                  >
+                    <path
+                      d="M6.47.828a.5.5 0 00-.94 0L4.268 4.267.827 5.53a.5.5 0 000 .938l3.44 1.264 1.264 3.44a.5.5 0 00.938 0l1.264-3.44 3.44-1.264a.5.5 0 000-.938l-3.44-1.264L6.47.827z"
+                      fill="url(#bluePinkGradient)"
+                      stroke="#fff"
+                      stroke-linejoin="round"
+                    ></path>
+                    <defs>
+                      <linearGradient
+                        id="bluePinkGradient"
+                        x1="1"
+                        y1="11"
+                        x2="11.01"
+                        y2="10.99"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#6A5CFF"></stop>
+                        <stop offset="1" stop-color="#E4ABFF"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <svg
+                    className="absolute h-3 w-3 bottom-0"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 12 12"
+                  >
+                    <path
+                      d="M6.47.828a.5.5 0 00-.94 0L4.268 4.267.827 5.53a.5.5 0 000 .938l3.44 1.264 1.264 3.44a.5.5 0 00.938 0l1.264-3.44 3.44-1.264a.5.5 0 000-.938l-3.44-1.264L6.47.827z"
+                      fill="url(#bluePinkGradient)"
+                      stroke="#fff"
+                      stroke-linejoin="round"
+                    ></path>
+                    <defs>
+                      <linearGradient
+                        id="bluePinkGradient"
+                        x1="1"
+                        y1="11"
+                        x2="11.01"
+                        y2="10.99"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#6A5CFF"></stop>
+                        <stop offset="1" stop-color="#E4ABFF"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <button
+                    className={`
+                      rounded-full
+                      text-sm
+                      bg-blue-300
+                      p-2
+                      hover:bg-blue-400 
+                  `}
+                  >
+                    Shop Avatar
+                  </button>
+                </div>
+              </div>
+
+              {/* info User */}
+              <div className="flex items-center min-w-[150px] px-2 gap-2 rounded justify-between border border-transparent hover:border-black">
+                <div className="flex items-center gap-1 text-gray-400">
+                  <div className={``}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-8 h-8"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="flex flex-col">
                     <p className="text-sm text-black">kakaprogrammer</p>
                     <p className="text-xs font-thin text-gray-500">1 karma</p>
                   </div>
@@ -152,7 +358,7 @@ const Option = tw.div`
   border-transparent
   h-9
   w-[72px]
-  sm:w-[270px]
+  sm:min-w-[180px]
   relative
   rounded
   // --newRedditTheme-line: #EDEFF1;
@@ -187,7 +393,7 @@ const TailwindButton = tw.button`
 `;
 
 const ConditionalButton = styled("button")<{ isRed?: string }>(({ isRed }) => [
-  isRed ? tw`bg-red-500 hover:bg-red-700` : tw`bg-blue-500 hover:bg-blue-500`,
+  isRed ? tw`bg-red-500 hover:bg-red-700` : tw`bg-blue-300 hover:bg-blue-500`,
   tw`
     text-white
     font-bold
@@ -198,6 +404,10 @@ const ConditionalButton = styled("button")<{ isRed?: string }>(({ isRed }) => [
     rounded
   `,
 ]);
+
+const AKAForm = tw.form`
+  
+`;
 
 type TechnologyCardProps = {
   name: string;
@@ -224,4 +434,10 @@ const TechnologyCard = ({
       </a>
     </section>
   );
+};
+
+interface IProps {}
+
+const AKForm: React.FC<IProps> = (props) => {
+  return <form className="" {...props}></form>;
 };
