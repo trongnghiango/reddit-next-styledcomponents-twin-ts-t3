@@ -309,32 +309,43 @@ const Home: NextPage = () => (
               </div>
 
               {/* info User */}
-              <div className="flex items-center min-w-[150px] px-2 gap-2 rounded justify-between border border-transparent hover:border-black">
-                <div className="flex items-center gap-1 text-gray-400">
-                  <div className={``}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-8 h-8"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
+              <div className={`relative`}>
+                {true && (
+                  <div
+                    className={`absolute rounded min-w-full top-0 right-0 border min-h-[400px] pt-[40px] flex flex-1`}
+                  >
+                    <div className="h-full flex flex-col bg-green-100 text-black">
+                      Hello
+                    </div>
                   </div>
-                  <div className="flex flex-col">
-                    <p className="text-sm text-black">kakaprogrammer</p>
-                    <p className="text-xs font-thin text-gray-500">1 karma</p>
+                )}
+                <div className="flex items-center min-w-[150px] px-2 gap-2 rounded justify-between border border-transparent hover:border-gray-300">
+                  <div className="flex items-center gap-1 text-gray-400">
+                    <div className={``}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-8 h-8"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="flex flex-col">
+                      <p className="text-sm text-black">kakaprogrammer</p>
+                      <p className="text-xs font-thin text-gray-500">1 karma</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="text-red-500">
-                  <ArrowDown className="h-3 w-3 text-blue-500" />
+                  <div className="text-red-500">
+                    <ArrowDown className="h-3 w-3 text-blue-500" />
+                  </div>
                 </div>
               </div>
             </div>
